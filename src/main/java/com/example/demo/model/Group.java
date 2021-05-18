@@ -24,9 +24,12 @@ public class Group {
     private Course course;
 
 
+    ManyToMany
+    @JoinTable(name = "group_student")
     private List<Student> students;
 
-
+    @OneToMany
+    @JoinColumn(name = "group_id")
     private List<Schedule> schedules;
 
 

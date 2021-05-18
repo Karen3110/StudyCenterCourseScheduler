@@ -2,10 +2,7 @@ package com.example.demo.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
@@ -16,8 +13,12 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @ManyToOne
+    @JoinColumn(name = "course_level_id")
     private CourseLevel courseLevel;
 
+    @OneToMany
+    @JoinColumn(name = "schedule_id")
     private List<Lesson> lessons;
 
 
