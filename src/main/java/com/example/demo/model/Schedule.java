@@ -3,7 +3,6 @@ package com.example.demo.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Entity
@@ -17,9 +16,10 @@ public class Schedule {
     @JoinColumn(name = "course_level_id")
     private CourseLevel courseLevel;
 
-    @OneToMany
-    @JoinColumn(name = "schedule_id")
-    private List<Lesson> lessons;
+
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private Group group;
 
 
 }

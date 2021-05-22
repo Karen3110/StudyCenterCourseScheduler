@@ -21,4 +21,9 @@ public class Lesson {
     private List<Student> students;
 
 
+    @ManyToOne
+    @JoinColumn(name = "schedule_id")
+    private Schedule schedule;
+
+
 }

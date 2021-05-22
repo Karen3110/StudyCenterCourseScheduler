@@ -21,6 +21,5 @@ public class Course {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "course_id")
-
     private List<CourseLevel> courseLevels;
 }
